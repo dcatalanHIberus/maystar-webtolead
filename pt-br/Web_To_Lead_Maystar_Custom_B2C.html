@@ -1,0 +1,172 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+<head>
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #recordType, label[for="recordType"]{
+            visibility: hidden;
+        }
+        footer{            
+            width: 100%;
+            padding-bottom: 2.5em;
+            margin-top: 1em;
+        }
+
+        footer div.claim{
+            font-family: Josefin San;
+            text-align: justify;
+            color:black;
+            width: 35em;            
+            padding: 1em;
+            display: table;
+            margin: 0 auto;
+        }
+
+        form{
+            margin: 0 auto;
+            width: 600px;
+            margin-top: 5%;
+        }
+
+        .formItem{
+            margin: 0.6em;
+        }
+
+        div.imageDiv{
+            text-align: center;            
+        }
+        
+        input, div>textarea{
+            position: relative;
+            margin-left: 10%;
+            background-color: #F9F9F9;
+            border: none;
+            padding: 0.9em;
+            font-family: Josefin Sans;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        div.formItem {
+            text-align: right;
+            font-weight: 400;
+            font-family: Josefin Sans;
+        }
+
+        div.formItem.description{
+            text-align: center;
+        }
+
+        div.inputButtonContainer{
+            text-align: center;
+            margin-top: 1.5em;
+        }
+
+        div.description textarea {
+            resize: none;
+            margin: 0 auto;
+        }
+        div.formItem.interestedProduct{
+            text-align: center;
+        }
+        input:focus, textarea:focus{
+            outline: none;
+        }
+
+        #submitButton{
+            border: none;
+            background-color: black;
+            font-family: Josefin Sans;
+            font-weight: 700;
+            padding: 1.2em;
+            color: #F9F9F9;
+            width: 100px;
+        }
+
+        select {
+            border: none;
+            background-color: #F9F9F9;
+            font-family: Josefin Sans;
+            font-weight: 700;
+            font-size: medium;
+            padding: 1.2em;
+            color: black;
+            width: 250px;   
+        }
+    </style>
+</head>
+<body>
+    <div class="imageDiv">
+        <img src="../img/MaystarBanner.png" alt="Maystar Cosmetica">
+    </div>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+        <input type=hidden name="oid" value="00D2X000001djsU">
+        <input type=hidden name="retURL" value="www.maystar.com">
+        
+        <div class="formItem">
+            <label for="first_name">NOME: </label><input  id="first_name" maxlength="80" name="first_name" size="20" type="text" /><br>
+        </div>
+        <div class="formItem">
+            <label for="last_name">SOBRENOME:</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+        </div>
+        <div class="formItem">
+            <label for="street">DIREÇÃO: </label><input name="street" type="text" size="40"/><br>
+        </div>        
+        <div class="formItem">
+            <label for="zip">C .P: </label><input  id="zip" maxlength="20" name="zip" size="20" type="text" /><br>
+        </div>
+        <div class="formItem">
+            <label for="city">POPULAÇÃO: </label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
+        </div>
+        <div class="formItem">
+            <label for="state">PROVÍNCIA: </label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>
+        </div>
+        <div class="formItem">
+            <label for="phone">TELEFONE: </label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+        </div>
+        <div class="formItem">
+            <label for="fax">FAX: </label><input  id="fax" maxlength="40" name="fax" size="20" type="text" /><br>
+        </div>
+        <div class="formItem">
+            <label for="email">E-MAIL: </label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>   
+        </div>
+        <div class="formItem description">
+            <label for="description">OBSERVAÇÕES: </label><br><textarea rows="5", cols="70" name="description"></textarea><br>
+        </div>
+        <div class="formItem interestedProduct">
+            <label for="00N2X00000ANP06">EM QUE PRODUTO DA MAYSTAR VOCÊ ESTÁ INTERESSADO</label>
+            <select  id="00N2X00000ANP06" name="00N2X00000ANP06" title="Product Interest">
+                <option value="">Escolha um</option>
+                <option value="DEPILFLAX">DEPILFLAX</option>
+                <option value="STARPIL">STARPIL</option>
+                <option value="MAYSTAR CÓSMETICA">MAYSTAR CÓSMETICA</option>
+                <option value="OTROS">OUTRAS</option>
+            </select><br>
+        </div>
+    
+        <label for="recordType">Lead Record Type</label>
+        <select  id="recordType" name="recordType">
+            <option value="0122X0000007AcK">B2C</option>
+        </select><br>
+
+            
+        <div class="inputButtonContainer">
+            <input id="submitButton" type="submit" name="submit" value="Aplicar">
+        </div>
+        
+    </form>
+    <footer>
+        <div class="claim">
+            <p>De acordo com a Lei Orgânica 15/99 de 13 de dezembro sobre Proteção de Dados Pessoais, informamos que os dados que você nos fornece voluntariamente ao preencher este formulário se tornarão parte de um arquivo automatizado cujo gerente é Maystar sl, com o Para fornecer informações sobre os produtos em que você está interessado, bem como anunciar outros produtos. Para agilizar essa função de publicidade, informamos que, em certos casos, seus dados podem ser transferidos para nossa rede de vendas e / ou para nossos clientes atacadistas, pelos quais você dá o seu consentimento. Caso contrário, ou se você não desejar receber nossa publicidade, poderá exercer seus direitos de acesso, retificação, cancelamento e oposição, escrevendo para Maystar sl, domiciliado na Pol. Ind. Roques Planes, C / Sol Ponent, 12-14, 43830 de Torredembarra, Tarragona</p>
+        </div>
+    </footer>
+</body>
+
+    
+    
+    
