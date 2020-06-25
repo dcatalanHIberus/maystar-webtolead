@@ -3,7 +3,7 @@
 <!--  If necessary, please modify the charset parameter to specify the        -->
 <!--  character set of your HTML page.                                        -->
 <!--  ----------------------------------------------------------------------  -->
-<head>
+<head>    
     <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -41,7 +41,7 @@
             position: relative;
             margin-left: 10%;
             background-color: #F9F9F9;
-            border: none;
+            border: none;            
             padding: 0.9em;
             font-family: Josefin Sans;
             font-weight: 400;
@@ -93,7 +93,7 @@
             padding: 1.2em;
             color: black;
             width: 250px;   
-        }
+        }        
     </style>
 </head>
 <body>
@@ -154,16 +154,92 @@
             </select><br>
         </div>
         <input type="hidden" name="recordType" id="recordType" value="0122X0000007AcF">
-        <input id="country" name="country" value="España" type="hidden" />    
+        <input id="country" name="country" value="España" type="hidden" />  
+        
         <div class="inputButtonContainer">
             <input id="submitButton" type="submit" name="submit" value="Aplicar">
         </div>
-    </form>
+    </form>    
+
     <footer>
         <div class="claim">
             <p>Según la Ley Orgánica 15/99 de 13 de diciembre de Protección de Datos de Carácter Personal, le informamos que los datos que voluntariamente nos está facilitando   al   cumplimentar   este   formulario,   pasarán   a   formar   parte   de   un   fichero   automatizado   cuyo   responsable   es   Maystar   sl,   con   la   finalidad   de proporcionarle    información  de los  productos  por los cuáles  se interesa,  así  como para  publicitar  otros de  nuestros productos.  Para agilizar  dicha  función publicitaria, le informamos de que en ciertos casos, sus datos podrían ser cedidos a nuestra red comercial y/o a nuestros clientes mayoristas, para lo cuál usted presta  su  consentimiento.   En  caso  contrario   o  si  no  desea  recibir  nuestra   publicidad,  puede   ejercer   sus  derechos   de  acceso,   rectificación,   cancelación   y oposición, mediante escrito a Maystar sl, domiciliada en Pol. Ind. Roques Planes, C/ Sol Ponent, 12-14, 43830 de Torredembarra, Tarragona</p>
         </div>
     </footer>
+
+    <style type="text/css">
+        .embeddedServiceHelpButton .helpButton .uiButton {
+            background-color: #005290;
+            font-family: "Arial", sans-serif;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton:focus {
+            outline: 1px solid #005290;
+        }
+    </style>
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+        var initESW = function(gslbBaseURL) {
+            embedded_svc.settings.displayHelpButton = true; //Or false
+            embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+    
+     
+    
+            //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+            //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+    
+     
+    
+            //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+            //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+    
+     
+    
+            // Settings for Chat
+            //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+                // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+                // Returns a valid button ID.
+            //};
+            //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+            //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+            //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+    
+     
+    
+            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+            embedded_svc.settings.entryFeature = 'LiveAgent';
+    
+     
+    
+            embedded_svc.init(
+                'https://maystar-dev-ed.my.salesforce.com',
+                'https://maystar-dev-ed-developer-edition.eu13.force.com/liveAgentSetupFlow',
+                gslbBaseURL,
+                '00D2X000001djsU',
+                'Chat_Agents',
+                {
+                    baseLiveAgentContentURL: 'https://c.la1-c2-frf.salesforceliveagent.com/content',
+                    deploymentId: '5722X000000Gukc',
+                    buttonId: '5732X000000GvRT',
+                    baseLiveAgentURL: 'https://d.la1-c2-frf.salesforceliveagent.com/chat',
+                    eswLiveAgentDevName: 'Chat_Agents',
+                    isOfflineSupportEnabled: false
+                }
+            );
+        };
+    
+     
+    
+        if (!window.embedded_svc) {
+            var s = document.createElement('script');
+            s.setAttribute('src', 'https://maystar-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+            s.onload = function() {
+                initESW(null);
+            };
+            document.body.appendChild(s);
+        } else {
+            initESW('https://service.force.com');
+        }
+    </script>
 </body>
 
     
