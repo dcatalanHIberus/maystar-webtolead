@@ -5,6 +5,7 @@
 <!--  ----------------------------------------------------------------------  -->
 <head>    
     <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+    <META >
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         footer{            
@@ -177,16 +178,7 @@
         }
     </style>
 
-    <a id="liveagent_button_online_5732X000000GvRT" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('5732X000000GvRT')">Agent Online</a>
-    <div id="liveagent_button_offline_5732X000000GvRT" style="display: none;"><!-- Offline Chat Content --> Agent Offline</div>
-
-    <script type="text/javascript">
-            if (!window._laq) { window._laq = []; }
-            window._laq.push(function(){liveagent.showWhenOnline('5732X000000GvRT', document.getElementById('liveagent_button_online_5732X000000GvRT'));
-            liveagent.showWhenOffline('5732X000000GvRT', document.getElementById('liveagent_button_offline_5732X000000GvRT'));
-        });
-    </script>
-
+    <!-- SERVICE -->
     <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
     <script type='text/javascript'>
         var initESW = function(gslbBaseURL) {
@@ -201,7 +193,7 @@
      
     
             //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-            //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+            embedded_svc.settings.storageDomain = 'https://dcatalanhiberus.github.io/'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
     
      
     
